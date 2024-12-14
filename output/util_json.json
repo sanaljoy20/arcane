@@ -1,0 +1,20 @@
+{
+    "programming_language": "Python",
+    "elements": [
+        {
+            "line_of_code": "def read_from_json_file(path_to_json, encoding='utf-8'):",
+            "FATAL": "",
+            "WARNING": "The function lacks a docstring or comments explaining its purpose, inputs, and error handling."
+        },
+        {
+            "line_of_code": "def write_to_json_file(dict, file_path, encoding='utf-8', indent=2):",
+            "FATAL": "",
+            "WARNING": "The function lacks a docstring or comments explaining its purpose, inputs, and error handling."
+        },
+        {
+            "line_of_code": "json_object = json.dumps(dict, indent=indent)",
+            "FATAL": "",
+            "WARNING": "The variable names 'dict' and 'indent' are not descriptive."
+        }
+    ]
+}
