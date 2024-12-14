@@ -5,6 +5,8 @@ from cornsnake import util_print
 
 import main
 
+
+
 def _print_usage_and_exit():
     print(f"USAGE: {sys.argv[0]} <path to source code file OR directory> [--out-dir <output directory>] [--exclude <file1.py,file2.ts>]")
     exit(42)

@@ -6,6 +6,12 @@ import dash_bootstrap_components as dbc
 import flask
 from difflib import ndiff
 
+
+from dotenv import load_dotenv
+
+load_dotenv()
+
+
 # Initialize Dash app
 app = Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
 app.title = "ARCANE"
@@ -87,7 +93,7 @@ def process_file(n_clicks, filename):
 
     try:
         subprocess.run([
-            "python", "via-chat-gpt", input_file_path, "--out-dir", output_dir
+            "python", "doc_ai", input_file_path, "--out-dir", output_dir
         ], check=True)
 
         output_file_path = os.path.join(output_dir, filename)
