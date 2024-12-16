@@ -1,11 +1,11 @@
-# Perform statistical analysis functions.
+# Linear Regression, Standardization, K-Means Clustering, and Correlation Matrix functions.
 
-#' Perform linear regression analysis.
+#' Perform linear regression on the given data.
 #'
-#' @param data The data frame containing the variables for regression.
-#' @param formula The formula specifying the regression model.
+#' @param data The data frame containing the variables.
+#' @param formula The formula for linear regression.
 #'
-#' @return A list containing coefficients, R-squared value, and p-value of the regression analysis.
+#' @return A list containing coefficients, r-squared, and p-value.
 #'
 linear_regression <- function(data, formula) {
   model <- lm(formula, data = data)
@@ -18,11 +18,11 @@ linear_regression <- function(data, formula) {
   return(list(coefficients = coefficients, r_squared = r_squared, p_value = p_value))
 }
 
-#' Standardize a numeric vector.
+#' Standardize the given numeric vector.
 #'
-#' @param x A numeric vector to be standardized.
+#' @param x The numeric vector to be standardized.
 #'
-#' @return The standardized version of the input vector.
+#' @return The standardized numeric vector.
 #'
 standardize <- function(x) {
   mean_x <- mean(x, na.rm = TRUE)
@@ -31,13 +31,13 @@ standardize <- function(x) {
   return(standardized_x)
 }
 
-#' Perform K-means clustering.
+#' Perform K-means clustering on the given data.
 #'
-#' @param data The data frame containing data points for clustering.
+#' @param data The data frame containing the observations.
 #' @param centers The number of clusters to form.
 #' @param max_iter The maximum number of iterations.
 #'
-#' @return A list containing cluster centers, cluster assignments, and total within sum of squares.
+#' @return A list containing cluster centers, cluster assignments, and total within SS.
 #'
 k_means_clustering <- function(data, centers = 3, max_iter = 100) {
   set.seed(42)
@@ -46,11 +46,11 @@ k_means_clustering <- function(data, centers = 3, max_iter = 100) {
   return(list(cluster_centers = result$centers, cluster_assignments = result$cluster, total_within_ss = result$tot.withinss))
 }
 
-#' Calculate the correlation matrix.
+#' Calculate the correlation matrix for the numeric variables.
 #'
-#' @param data The data frame containing numeric variables.
+#' @param data The data frame containing the variables.
 #'
-#' @return The correlation matrix of the numeric variables.
+#' @return The correlation matrix.
 #'
 correlation_matrix <- function(data) {
   num_cols <- sapply(data, is.numeric)

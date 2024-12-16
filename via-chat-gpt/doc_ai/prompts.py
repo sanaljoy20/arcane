@@ -40,6 +40,8 @@ EXAMPLE PYTHON OUTPUT:
 # EXAMPLE R INPUT:
 ```
 moving_average <- function(x, window_size = 3) {{
+  
+  assertthat::assert_that(is.numeric(x), msg = 'x should be numeric')
 
   if (!is.numeric(window_size) || window_size <= 0 || window_size != floor(window_size)) {{
     stop()
@@ -65,7 +67,7 @@ EXAMPLE R OUTPUT:
     "overall_comment": "# Calculate Averages.",
     "elements": [{{
         "definition": "moving_average <- function(x, window_size = 3)",
-        "comment": " #_SQUOTE_ Calculate the Moving Average\n #_SQUOTE_\n #_SQUOTE_ This function calculates the moving average of a numeric vector. It takes a window size parameter to determine how many previous values to include in the average calculation.\n #_SQUOTE_\n #_SQUOTE_ @param x A numeric vector for which the moving average will be calculated.\n #_SQUOTE_ @param window_size A positive integer specifying the number of elements to include in the moving average window. Default is 3.\n #_SQUOTE_\n #_SQUOTE_ @return A numeric vector of the same length as `x`, containing the moving average values.\n #_SQUOTE_"
+        "comment": " #_SQUOTE_ Calculate the Moving Average\n #_SQUOTE_\n #_SQUOTE_ This function calculates the moving average of a numeric vector. It takes a window size parameter to determine how many previous values to include in the average calculation.\n #_SQUOTE_\n #_SQUOTE_ @param x A numeric vector for which the moving average will be calculated.\n #_SQUOTE_ @param window_size A positive integer specifying the number of elements to include in the moving average window. Default is 3.\n #_SQUOTE_ @importFrom assertthat assert_that\n #_SQUOTE_\n #_SQUOTE_ @return A numeric vector of the same length as `x`, containing the moving average values.\n #_SQUOTE_"
     }}
     ]
 }}
